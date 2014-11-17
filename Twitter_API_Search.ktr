@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>Twitter_API_Search</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2014&#x2f;02&#x2f;25 17&#x3a;31&#x3a;04.855</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2014&#x2f;02&#x2f;25 17&#x3a;31&#x3a;04.855</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <order>
+  <hop> <from>Data Grid - API URI</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Data Grid - OAUTH Parameter</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value - Generate Header</from><to>REST Client</to><enabled>Y</enabled> </hop>
+  <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>Modified Java Script Value - Generate Header</to><enabled>Y</enabled> </hop>
+  <hop> <from>REST Client</from><to>Text file output - raw json</to><enabled>Y</enabled> </hop>
+  <hop> <from>REST Client</from><to>Json - Twits</to><enabled>Y</enabled> </hop>
+  <hop> <from>Json - Twits</from><to>Json - Hashtags</to><enabled>Y</enabled> </hop>
+  <hop> <from>Json - Twits</from><to>Text file output - Twits</to><enabled>Y</enabled> </hop>
+  <hop> <from>Json - Hashtags</from><to>Text file output - hashtags</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Data Grid - API URI</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>HTTP_METHOD</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>URL</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line> <item>GET</item><item>https&#x3a;&#x2f;&#x2f;api.twitter.com&#x2f;1.1&#x2f;search&#x2f;tweets.json</item> </line>
+    </data>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>465</xloc>
+      <yloc>182</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Data Grid - OAUTH Parameter</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>oauth_consumer_key</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_nonce</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_signature</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_signature_method</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_timestamp</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_token</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_version</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_consumer_secret</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>oauth_token_secret</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>255</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line> <item>11111111111</item><item/><item/><item>HMAC-SHA1</item><item/><item>222222222222</item><item>1.0</item><item>333333333333</item><item>444444444444444</item> </line>
+    </data>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>81</xloc>
+      <yloc>182</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Join Rows &#x28;cartesian product&#x29;</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>265</xloc>
+      <yloc>182</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Json - Hashtags</name>
+    <type>JsonInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <readurl>N</readurl>
+    <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <ignoreMissingPath>Y</ignoreMissingPath>
+    <rownum_field/>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>hashtag</name>
+        <path>&#x24;.&#x2a;.text</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <IsInFields>Y</IsInFields>
+    <IsAFile>N</IsAFile>
+    <valueField>hashtags</valueField>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>844</xloc>
+      <yloc>330</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Json - Twits</name>
+    <type>JsonInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <readurl>N</readurl>
+    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <ignoreMissingPath>Y</ignoreMissingPath>
+    <rownum_field/>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>id_str</name>
+        <path>&#x24;.statuses.&#x2a;.id_str</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>text</name>
+        <path>&#x24;.statuses.&#x2a;.text</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>hashtags</name>
+        <path>&#x24;.statuses.&#x2a;.entities.hashtags</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>geo</name>
+        <path>&#x24;.statuses.&#x2a;.geo</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>created_at</name>
+        <path>&#x24;.statuses.&#x2a;.created_at</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>in_reply_to_status_id_str</name>
+        <path>&#x24;.statuses.&#x2a;.in_reply_to_status_id_str</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>user_id</name>
+        <path>&#x24;.statuses.&#x2a;.user.id_str</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>follower_count</name>
+        <path>&#x24;.statuses.&#x2a;.user.followers_count</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>retweet_count</name>
+        <path>&#x24;.statuses.&#x2a;.retweet_count</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <IsInFields>Y</IsInFields>
+    <IsAFile>N</IsAFile>
+    <valueField>result</valueField>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>657</xloc>
+      <yloc>330</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value - Generate Header</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2a;&#xa; &#x2a; A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined&#xa; &#x2a; in FIPS PUB 180-1&#xa; &#x2a; Version 2.1a Copyright Paul Johnston 2000 - 2002.&#xa; &#x2a; Other contributors&#x3a; Greg Holt, Andrew Kepert, Ydnar, Lostinet&#xa; &#x2a; Distributed under the BSD License&#xa; &#x2a; See http&#x3a;&#x2f;&#x2f;pajhome.org.uk&#x2f;crypt&#x2f;md5 for details.&#xa; &#x2a;&#x2f;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Configurable variables. You may need to tweak these to be compatible with&#xa; &#x2a; the server-side, but the defaults work in most cases.&#xa; &#x2a;&#x2f;&#xa;var hexcase &#x3d; 0&#x3b;  &#x2f;&#x2a; hex output format. 0 - lowercase&#x3b; 1 - uppercase        &#x2a;&#x2f;&#xa;var b64pad  &#x3d; &#x22;&#x22;&#x3b; &#x2f;&#x2a; base-64 pad character. &#x22;&#x3d;&#x22; for strict RFC compliance   &#x2a;&#x2f;&#xa;var chrsz   &#x3d; 8&#x3b;  &#x2f;&#x2a; bits per input character. 8 - ASCII&#x3b; 16 - Unicode      &#x2a;&#x2f;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; These are the functions you&#x27;ll usually want to call&#xa; &#x2a; They take string arguments and return either hex or base-64 encoded strings&#xa; &#x2a;&#x2f;&#xa;&#xa;&#xa;function hex_sha1&#x28;s&#x29;&#x7b;return binb2hex&#x28;core_sha1&#x28;str2binb&#x28;s&#x29;,s.length &#x2a; chrsz&#x29;&#x29;&#x3b;&#x7d;&#xa;function b64_sha1&#x28;s&#x29;&#x7b;return binb2b64&#x28;core_sha1&#x28;str2binb&#x28;s&#x29;,s.length &#x2a; chrsz&#x29;&#x29;&#x3b;&#x7d;&#xa;function str_sha1&#x28;s&#x29;&#x7b;return binb2str&#x28;core_sha1&#x28;str2binb&#x28;s&#x29;,s.length &#x2a; chrsz&#x29;&#x29;&#x3b;&#x7d;&#xa;function hex_hmac_sha1&#x28;key, data&#x29;&#x7b; return binb2hex&#x28;core_hmac_sha1&#x28;key, data&#x29;&#x29;&#x3b;&#x7d;&#xa;function b64_hmac_sha1&#x28;key, data&#x29;&#x7b; return binb2b64&#x28;core_hmac_sha1&#x28;key, data&#x29;&#x29;&#x3b;&#x7d;&#xa;function str_hmac_sha1&#x28;key, data&#x29;&#x7b; return binb2str&#x28;core_hmac_sha1&#x28;key, data&#x29;&#x29;&#x3b;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Perform a simple self-test to see if the VM is working&#xa; &#x2a;&#x2f;&#xa;function sha1_vm_test&#x28;&#x29;&#xa;&#x7b;&#xa;  return hex_sha1&#x28;&#x22;abc&#x22;&#x29; &#x3d;&#x3d; &#x22;a9993e364706816aba3e25717850c26c9cd0d89d&#x22;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Calculate the SHA-1 of an array of big-endian words, and a bit length&#xa; &#x2a;&#x2f;&#xa;function core_sha1&#x28;x, len&#x29;&#xa;&#x7b;&#xa;  &#x2f;&#x2a; append padding &#x2a;&#x2f;&#xa;  x&#x5b;len &#x3e;&#x3e; 5&#x5d; &#x7c;&#x3d; 0x80 &#x3c;&#x3c; &#x28;24 - len &#x25; 32&#x29;&#x3b;&#xa;  x&#x5b;&#x28;&#x28;len &#x2b; 64 &#x3e;&#x3e; 9&#x29; &#x3c;&#x3c; 4&#x29; &#x2b; 15&#x5d; &#x3d; len&#x3b;&#xa;&#xa;  var w &#x3d; Array&#x28;80&#x29;&#x3b;&#xa;  var a &#x3d;  1732584193&#x3b;&#xa;  var b &#x3d; -271733879&#x3b;&#xa;  var c &#x3d; -1732584194&#x3b;&#xa;  var d &#x3d;  271733878&#x3b;&#xa;  var e &#x3d; -1009589776&#x3b;&#xa;&#xa;  for&#x28;var i &#x3d; 0&#x3b; i &#x3c; x.length&#x3b; i &#x2b;&#x3d; 16&#x29;&#xa;  &#x7b;&#xa;    var olda &#x3d; a&#x3b;&#xa;    var oldb &#x3d; b&#x3b;&#xa;    var oldc &#x3d; c&#x3b;&#xa;    var oldd &#x3d; d&#x3b;&#xa;    var olde &#x3d; e&#x3b;&#xa;&#xa;    for&#x28;var j &#x3d; 0&#x3b; j &#x3c; 80&#x3b; j&#x2b;&#x2b;&#x29;&#xa;    &#x7b;&#xa;      if&#x28;j &#x3c; 16&#x29; w&#x5b;j&#x5d; &#x3d; x&#x5b;i &#x2b; j&#x5d;&#x3b;&#xa;      else w&#x5b;j&#x5d; &#x3d; rol&#x28;w&#x5b;j-3&#x5d; &#x5e; w&#x5b;j-8&#x5d; &#x5e; w&#x5b;j-14&#x5d; &#x5e; w&#x5b;j-16&#x5d;, 1&#x29;&#x3b;&#xa;      var t &#x3d; safe_add&#x28;safe_add&#x28;rol&#x28;a, 5&#x29;, sha1_ft&#x28;j, b, c, d&#x29;&#x29;,&#xa;                       safe_add&#x28;safe_add&#x28;e, w&#x5b;j&#x5d;&#x29;, sha1_kt&#x28;j&#x29;&#x29;&#x29;&#x3b;&#xa;      e &#x3d; d&#x3b;&#xa;      d &#x3d; c&#x3b;&#xa;      c &#x3d; rol&#x28;b, 30&#x29;&#x3b;&#xa;      b &#x3d; a&#x3b;&#xa;      a &#x3d; t&#x3b;&#xa;    &#x7d;&#xa;&#xa;    a &#x3d; safe_add&#x28;a, olda&#x29;&#x3b;&#xa;    b &#x3d; safe_add&#x28;b, oldb&#x29;&#x3b;&#xa;    c &#x3d; safe_add&#x28;c, oldc&#x29;&#x3b;&#xa;    d &#x3d; safe_add&#x28;d, oldd&#x29;&#x3b;&#xa;    e &#x3d; safe_add&#x28;e, olde&#x29;&#x3b;&#xa;  &#x7d;&#xa;  return Array&#x28;a, b, c, d, e&#x29;&#x3b;&#xa;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Perform the appropriate triplet combination function for the current&#xa; &#x2a; iteration&#xa; &#x2a;&#x2f;&#xa;function sha1_ft&#x28;t, b, c, d&#x29;&#xa;&#x7b;&#xa;  if&#x28;t &#x3c; 20&#x29; return &#x28;b &#x26; c&#x29; &#x7c; &#x28;&#x28;&#x7e;b&#x29; &#x26; d&#x29;&#x3b;&#xa;  if&#x28;t &#x3c; 40&#x29; return b &#x5e; c &#x5e; d&#x3b;&#xa;  if&#x28;t &#x3c; 60&#x29; return &#x28;b &#x26; c&#x29; &#x7c; &#x28;b &#x26; d&#x29; &#x7c; &#x28;c &#x26; d&#x29;&#x3b;&#xa;  return b &#x5e; c &#x5e; d&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Determine the appropriate additive constant for the current iteration&#xa; &#x2a;&#x2f;&#xa;function sha1_kt&#x28;t&#x29;&#xa;&#x7b;&#xa;  return &#x28;t &#x3c; 20&#x29; &#x3f;  1518500249 &#x3a; &#x28;t &#x3c; 40&#x29; &#x3f;  1859775393 &#x3a;&#xa;         &#x28;t &#x3c; 60&#x29; &#x3f; -1894007588 &#x3a; -899497514&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Calculate the HMAC-SHA1 of a key and some data&#xa; &#x2a;&#x2f;&#xa;function core_hmac_sha1&#x28;key, data&#x29;&#xa;&#x7b;&#xa;  var bkey &#x3d; str2binb&#x28;key&#x29;&#x3b;&#xa;  if&#x28;bkey.length &#x3e; 16&#x29; bkey &#x3d; core_sha1&#x28;bkey, key.length &#x2a; chrsz&#x29;&#x3b;&#xa;&#xa;  var ipad &#x3d; Array&#x28;16&#x29;, opad &#x3d; Array&#x28;16&#x29;&#x3b;&#xa;  for&#x28;var i &#x3d; 0&#x3b; i &#x3c; 16&#x3b; i&#x2b;&#x2b;&#x29;&#xa;  &#x7b;&#xa;    ipad&#x5b;i&#x5d; &#x3d; bkey&#x5b;i&#x5d; &#x5e; 0x36363636&#x3b;&#xa;    opad&#x5b;i&#x5d; &#x3d; bkey&#x5b;i&#x5d; &#x5e; 0x5C5C5C5C&#x3b;&#xa;  &#x7d;&#xa;&#xa;  var hash &#x3d; core_sha1&#x28;ipad.concat&#x28;str2binb&#x28;data&#x29;&#x29;, 512 &#x2b; data.length &#x2a; chrsz&#x29;&#x3b;&#xa;  return core_sha1&#x28;opad.concat&#x28;hash&#x29;, 512 &#x2b; 160&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Add integers, wrapping at 2&#x5e;32. This uses 16-bit operations internally&#xa; &#x2a; to work around bugs in some JS interpreters.&#xa; &#x2a;&#x2f;&#xa;function safe_add&#x28;x, y&#x29;&#xa;&#x7b;&#xa;  var lsw &#x3d; &#x28;x &#x26; 0xFFFF&#x29; &#x2b; &#x28;y &#x26; 0xFFFF&#x29;&#x3b;&#xa;  var msw &#x3d; &#x28;x &#x3e;&#x3e; 16&#x29; &#x2b; &#x28;y &#x3e;&#x3e; 16&#x29; &#x2b; &#x28;lsw &#x3e;&#x3e; 16&#x29;&#x3b;&#xa;  return &#x28;msw &#x3c;&#x3c; 16&#x29; &#x7c; &#x28;lsw &#x26; 0xFFFF&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Bitwise rotate a 32-bit number to the left.&#xa; &#x2a;&#x2f;&#xa;function rol&#x28;num, cnt&#x29;&#xa;&#x7b;&#xa;  return &#x28;num &#x3c;&#x3c; cnt&#x29; &#x7c; &#x28;num &#x3e;&#x3e;&#x3e; &#x28;32 - cnt&#x29;&#x29;&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Convert an 8-bit or 16-bit string to an array of big-endian words&#xa; &#x2a; In 8-bit function, characters &#x3e;255 have their hi-byte silently ignored.&#xa; &#x2a;&#x2f;&#xa;function str2binb&#x28;str&#x29;&#xa;&#x7b;&#xa;  var bin &#x3d; Array&#x28;&#x29;&#x3b;&#xa;  var mask &#x3d; &#x28;1 &#x3c;&#x3c; chrsz&#x29; - 1&#x3b;&#xa;  for&#x28;var i &#x3d; 0&#x3b; i &#x3c; str.length &#x2a; chrsz&#x3b; i &#x2b;&#x3d; chrsz&#x29;&#xa;    bin&#x5b;i&#x3e;&#x3e;5&#x5d; &#x7c;&#x3d; &#x28;str.charCodeAt&#x28;i &#x2f; chrsz&#x29; &#x26; mask&#x29; &#x3c;&#x3c; &#x28;32 - chrsz - i&#x25;32&#x29;&#x3b;&#xa;  return bin&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Convert an array of big-endian words to a string&#xa; &#x2a;&#x2f;&#xa;function binb2str&#x28;bin&#x29;&#xa;&#x7b;&#xa;  var str &#x3d; &#x22;&#x22;&#x3b;&#xa;  var mask &#x3d; &#x28;1 &#x3c;&#x3c; chrsz&#x29; - 1&#x3b;&#xa;  for&#x28;var i &#x3d; 0&#x3b; i &#x3c; bin.length &#x2a; 32&#x3b; i &#x2b;&#x3d; chrsz&#x29;&#xa;    str &#x2b;&#x3d; String.fromCharCode&#x28;&#x28;bin&#x5b;i&#x3e;&#x3e;5&#x5d; &#x3e;&#x3e;&#x3e; &#x28;32 - chrsz - i&#x25;32&#x29;&#x29; &#x26; mask&#x29;&#x3b;&#xa;  return str&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Convert an array of big-endian words to a hex string.&#xa; &#x2a;&#x2f;&#xa;function binb2hex&#x28;binarray&#x29;&#xa;&#x7b;&#xa;  var hex_tab &#x3d; hexcase &#x3f; &#x22;0123456789ABCDEF&#x22; &#x3a; &#x22;0123456789abcdef&#x22;&#x3b;&#xa;  var str &#x3d; &#x22;&#x22;&#x3b;&#xa;  for&#x28;var i &#x3d; 0&#x3b; i &#x3c; binarray.length &#x2a; 4&#x3b; i&#x2b;&#x2b;&#x29;&#xa;  &#x7b;&#xa;    str &#x2b;&#x3d; hex_tab.charAt&#x28;&#x28;binarray&#x5b;i&#x3e;&#x3e;2&#x5d; &#x3e;&#x3e; &#x28;&#x28;3 - i&#x25;4&#x29;&#x2a;8&#x2b;4&#x29;&#x29; &#x26; 0xF&#x29; &#x2b;&#xa;           hex_tab.charAt&#x28;&#x28;binarray&#x5b;i&#x3e;&#x3e;2&#x5d; &#x3e;&#x3e; &#x28;&#x28;3 - i&#x25;4&#x29;&#x2a;8  &#x29;&#x29; &#x26; 0xF&#x29;&#x3b;&#xa;  &#x7d;&#xa;  return str&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Convert an array of big-endian words to a base-64 string&#xa; &#x2a;&#x2f;&#xa;function binb2b64&#x28;binarray&#x29;&#xa;&#x7b;&#xa;  var tab &#x3d; &#x22;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&#x2b;&#x2f;&#x22;&#x3b;&#xa;  var str &#x3d; &#x22;&#x22;&#x3b;&#xa;  for&#x28;var i &#x3d; 0&#x3b; i &#x3c; binarray.length &#x2a; 4&#x3b; i &#x2b;&#x3d; 3&#x29;&#xa;  &#x7b;&#xa;    var triplet &#x3d; &#x28;&#x28;&#x28;binarray&#x5b;i   &#x3e;&#x3e; 2&#x5d; &#x3e;&#x3e; 8 &#x2a; &#x28;3 -  i   &#x25;4&#x29;&#x29; &#x26; 0xFF&#x29; &#x3c;&#x3c; 16&#x29;&#xa;                &#x7c; &#x28;&#x28;&#x28;binarray&#x5b;i&#x2b;1 &#x3e;&#x3e; 2&#x5d; &#x3e;&#x3e; 8 &#x2a; &#x28;3 - &#x28;i&#x2b;1&#x29;&#x25;4&#x29;&#x29; &#x26; 0xFF&#x29; &#x3c;&#x3c; 8 &#x29;&#xa;                &#x7c;  &#x28;&#x28;binarray&#x5b;i&#x2b;2 &#x3e;&#x3e; 2&#x5d; &#x3e;&#x3e; 8 &#x2a; &#x28;3 - &#x28;i&#x2b;2&#x29;&#x25;4&#x29;&#x29; &#x26; 0xFF&#x29;&#x3b;&#xa;    for&#x28;var j &#x3d; 0&#x3b; j &#x3c; 4&#x3b; j&#x2b;&#x2b;&#x29;&#xa;    &#x7b;&#xa;      if&#x28;i &#x2a; 8 &#x2b; j &#x2a; 6 &#x3e; binarray.length &#x2a; 32&#x29; str &#x2b;&#x3d; b64pad&#x3b;&#xa;      else str &#x2b;&#x3d; tab.charAt&#x28;&#x28;triplet &#x3e;&#x3e; 6&#x2a;&#x28;3-j&#x29;&#x29; &#x26; 0x3F&#x29;&#x3b;&#xa;    &#x7d;&#xa;  &#x7d;&#xa;  return str&#x3b;&#xa;&#x7d;&#xa;&#xa;&#xa;&#x2f;&#x2a;&#xa; &#x2a; Copyright 2008 Netflix, Inc.&#xa; &#x2a;&#xa; &#x2a; Licensed under the Apache License, Version 2.0 &#x28;the &#x22;License&#x22;&#x29;&#x3b;&#xa; &#x2a; you may not use this file except in compliance with the License.&#xa; &#x2a; You may obtain a copy of the License at&#xa; &#x2a;&#xa; &#x2a;     http&#x3a;&#x2f;&#x2f;www.apache.org&#x2f;licenses&#x2f;LICENSE-2.0&#xa; &#x2a;&#xa; &#x2a; Unless required by applicable law or agreed to in writing, software&#xa; &#x2a; distributed under the License is distributed on an &#x22;AS IS&#x22; BASIS,&#xa; &#x2a; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xa; &#x2a; See the License for the specific language governing permissions and&#xa; &#x2a; limitations under the License.&#xa; &#x2a;&#x2f;&#xa;&#xa;&#x2f;&#x2a; Here&#x27;s some JavaScript software for implementing OAuth.&#xa;&#xa;   This isn&#x27;t as useful as you might hope.  OAuth is based around&#xa;   allowing tools and websites to talk to each other.  However,&#xa;   JavaScript running in web browsers is hampered by security&#xa;   restrictions that prevent code running on one website from&#xa;   accessing data stored or served on another.&#xa;&#xa;   Before you start hacking, make sure you understand the limitations&#xa;   posed by cross-domain XMLHttpRequest.&#xa;&#xa;   On the bright side, some platforms use JavaScript as their&#xa;   language, but enable the programmer to access other web sites.&#xa;   Examples include Google Gadgets, and Microsoft Vista Sidebar.&#xa;   For those platforms, this library should come in handy.&#xa;&#x2a;&#x2f;&#xa;&#xa;&#x2f;&#x2f; The HMAC-SHA1 signature method calls b64_hmac_sha1, defined by&#xa;&#x2f;&#x2f; http&#x3a;&#x2f;&#x2f;pajhome.org.uk&#x2f;crypt&#x2f;md5&#x2f;sha1.js&#xa;&#xa;&#x2f;&#x2a; An OAuth message is represented as an object like this&#x3a;&#xa;   &#x7b;method&#x3a; &#x22;GET&#x22;, action&#x3a; &#x22;http&#x3a;&#x2f;&#x2f;server.com&#x2f;path&#x22;, parameters&#x3a; ...&#x7d;&#xa;&#xa;   The parameters may be either a map &#x7b;name&#x3a; value, name2&#x3a; value2&#x7d;&#xa;   or an Array of name-value pairs &#x5b;&#x5b;name, value&#x5d;, &#x5b;name2, value2&#x5d;&#x5d;.&#xa;   The latter representation is more powerful&#x3a; it supports parameters&#xa;   in a specific sequence, or several parameters with the same name&#x3b;&#xa;   for example &#x5b;&#x5b;&#x22;a&#x22;, 1&#x5d;, &#x5b;&#x22;b&#x22;, 2&#x5d;, &#x5b;&#x22;a&#x22;, 3&#x5d;&#x5d;.&#xa;&#xa;   Parameter names and values are NOT percent-encoded in an object.&#xa;   They must be encoded before transmission and decoded after reception.&#xa;   For example, this message object&#x3a;&#xa;   &#x7b;method&#x3a; &#x22;GET&#x22;, action&#x3a; &#x22;http&#x3a;&#x2f;&#x2f;server&#x2f;path&#x22;, parameters&#x3a; &#x7b;p&#x3a; &#x22;x y&#x22;&#x7d;&#x7d;&#xa;   ... can be transmitted as an HTTP request that begins&#x3a;&#xa;   GET &#x2f;path&#x3f;p&#x3d;x&#x25;20y HTTP&#x2f;1.0&#xa;   &#x28;This isn&#x27;t a valid OAuth request, since it lacks a signature etc.&#x29;&#xa;   Note that the object &#x22;x y&#x22; is transmitted as x&#x25;20y.  To encode&#xa;   parameters, you can call OAuth.addToURL, OAuth.formEncode or&#xa;   OAuth.getAuthorization.&#xa;&#xa;   This message object model harmonizes with the browser object model for&#xa;   input elements of an form, whose value property isn&#x27;t percent encoded.&#xa;   The browser encodes each value before transmitting it. For example,&#xa;   see consumer.setInputs in example&#x2f;consumer.js.&#xa; &#x2a;&#x2f;&#xa;&#xa;&#x2f;&#x2a; This script needs to know what time it is. By default, it uses the local&#xa;   clock &#x28;new Date&#x29;, which is apt to be inaccurate in browsers. To do&#xa;   better, you can load this script from a URL whose query string contains&#xa;   an oauth_timestamp parameter, whose value is a current Unix timestamp.&#xa;   For example, when generating the enclosing document using PHP&#x3a;&#xa;&#xa;   &#x3c;script src&#x3d;&#x22;oauth.js&#x3f;oauth_timestamp&#x3d;&#x3c;&#x3f;&#x3d;time&#x28;&#x29;&#x3f;&#x3e;&#x22; ...&#xa;&#xa;   Another option is to call OAuth.correctTimestamp with a Unix timestamp.&#xa; &#x2a;&#x2f;&#xa;&#xa;var OAuth&#x3b; if &#x28;OAuth &#x3d;&#x3d; null&#x29; OAuth &#x3d; &#x7b;&#x7d;&#x3b;&#xa;&#xa;OAuth.setProperties &#x3d; function setProperties&#x28;into, from&#x29; &#x7b;&#xa;    if &#x28;into &#x21;&#x3d; null &#x26;&#x26; from &#x21;&#x3d; null&#x29; &#x7b;&#xa;        for &#x28;var key in from&#x29; &#x7b;&#xa;            into&#x5b;key&#x5d; &#x3d; from&#x5b;key&#x5d;&#x3b;&#xa;        &#x7d;&#xa;    &#x7d;&#xa;    return into&#x3b;&#xa;&#x7d;&#xa;&#xa;OAuth.setProperties&#x28;OAuth, &#x2f;&#x2f; utility functions&#xa;&#x7b;&#xa;    percentEncode&#x3a; function percentEncode&#x28;s&#x29; &#x7b;&#xa;        if &#x28;s &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            return &#x22;&#x22;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;s instanceof Array&#x29; &#x7b;&#xa;            var e &#x3d; &#x22;&#x22;&#x3b;&#xa;            for &#x28;var i &#x3d; 0&#x3b; i &#x3c; s.length&#x3b; &#x2b;&#x2b;s&#x29; &#x7b;&#xa;                if &#x28;e &#x21;&#x3d; &#x22;&#x22;&#x29; e &#x2b;&#x3d; &#x27;&#x26;&#x27;&#x3b;&#xa;                e &#x2b;&#x3d; OAuth.percentEncode&#x28;s&#x5b;i&#x5d;&#x29;&#x3b;&#xa;            &#x7d;&#xa;            return e&#x3b;&#xa;        &#x7d;&#xa;        s &#x3d; encodeURIComponent&#x28;s&#x29;&#x3b;&#xa;        &#x2f;&#x2f; Now replace the values which encodeURIComponent doesn&#x27;t do&#xa;        &#x2f;&#x2f; encodeURIComponent ignores&#x3a; - _ . &#x21; &#x7e; &#x2a; &#x27; &#x28; &#x29;&#xa;        &#x2f;&#x2f; OAuth dictates the only ones you can ignore are&#x3a; - _ . &#x7e;&#xa;        &#x2f;&#x2f; Source&#x3a; http&#x3a;&#x2f;&#x2f;developer.mozilla.org&#x2f;en&#x2f;docs&#x2f;Core_JavaScript_1.5_Reference&#x3a;Global_Functions&#x3a;encodeURIComponent&#xa;        s &#x3d; s.replace&#x28;&#x2f;&#x5c;&#x21;&#x2f;g, &#x22;&#x25;21&#x22;&#x29;&#x3b;&#xa;        s &#x3d; s.replace&#x28;&#x2f;&#x5c;&#x2a;&#x2f;g, &#x22;&#x25;2A&#x22;&#x29;&#x3b;&#xa;        s &#x3d; s.replace&#x28;&#x2f;&#x5c;&#x27;&#x2f;g, &#x22;&#x25;27&#x22;&#x29;&#x3b;&#xa;        s &#x3d; s.replace&#x28;&#x2f;&#x5c;&#x28;&#x2f;g, &#x22;&#x25;28&#x22;&#x29;&#x3b;&#xa;        s &#x3d; s.replace&#x28;&#x2f;&#x5c;&#x29;&#x2f;g, &#x22;&#x25;29&#x22;&#x29;&#x3b;&#xa;        return s&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    decodePercent&#x3a; function decodePercent&#x28;s&#x29; &#x7b;&#xa;        if &#x28;s &#x21;&#x3d; null&#x29; &#x7b;&#xa;            &#x2f;&#x2f; Handle application&#x2f;x-www-form-urlencoded, which is defined by&#xa;            &#x2f;&#x2f; http&#x3a;&#x2f;&#x2f;www.w3.org&#x2f;TR&#x2f;html4&#x2f;interact&#x2f;forms.html&#x23;h-17.13.4.1&#xa;            s &#x3d; s.replace&#x28;&#x2f;&#x5c;&#x2b;&#x2f;g, &#x22; &#x22;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        return decodeURIComponent&#x28;s&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Convert the given parameters to an Array of name-value pairs. &#x2a;&#x2f;&#xa;    getParameterList&#x3a; function getParameterList&#x28;parameters&#x29; &#x7b;&#xa;        if &#x28;parameters &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            return &#x5b;&#x5d;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;typeof parameters &#x21;&#x3d; &#x22;object&#x22;&#x29; &#x7b;&#xa;            return OAuth.decodeForm&#x28;parameters &#x2b; &#x22;&#x22;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;parameters instanceof Array&#x29; &#x7b;&#xa;            return parameters&#x3b;&#xa;        &#x7d;&#xa;        var list &#x3d; &#x5b;&#x5d;&#x3b;&#xa;        for &#x28;var p in parameters&#x29; &#x7b;&#xa;            list.push&#x28;&#x5b;p, parameters&#x5b;p&#x5d;&#x5d;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        return list&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Convert the given parameters to a map from name to value. &#x2a;&#x2f;&#xa;    getParameterMap&#x3a; function getParameterMap&#x28;parameters&#x29; &#x7b;&#xa;        if &#x28;parameters &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            return &#x7b;&#x7d;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;typeof parameters &#x21;&#x3d; &#x22;object&#x22;&#x29; &#x7b;&#xa;            return OAuth.getParameterMap&#x28;OAuth.decodeForm&#x28;parameters &#x2b; &#x22;&#x22;&#x29;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;parameters instanceof Array&#x29; &#x7b;&#xa;            var map &#x3d; &#x7b;&#x7d;&#x3b;&#xa;            for &#x28;var p &#x3d; 0&#x3b; p &#x3c; parameters.length&#x3b; &#x2b;&#x2b;p&#x29; &#x7b;&#xa;                var key &#x3d; parameters&#x5b;p&#x5d;&#x5b;0&#x5d;&#x3b;&#xa;                if &#x28;map&#x5b;key&#x5d; &#x3d;&#x3d;&#x3d; undefined&#x29; &#x7b; &#x2f;&#x2f; first value wins&#xa;                    map&#x5b;key&#x5d; &#x3d; parameters&#x5b;p&#x5d;&#x5b;1&#x5d;&#x3b;&#xa;                &#x7d;&#xa;            &#x7d;&#xa;            return map&#x3b;&#xa;        &#x7d;&#xa;        return parameters&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    getParameter&#x3a; function getParameter&#x28;parameters, name&#x29; &#x7b;&#xa;        if &#x28;parameters instanceof Array&#x29; &#x7b;&#xa;            for &#x28;var p &#x3d; 0&#x3b; p &#x3c; parameters.length&#x3b; &#x2b;&#x2b;p&#x29; &#x7b;&#xa;                if &#x28;parameters&#x5b;p&#x5d;&#x5b;0&#x5d; &#x3d;&#x3d; name&#x29; &#x7b;&#xa;                    return parameters&#x5b;p&#x5d;&#x5b;1&#x5d;&#x3b; &#x2f;&#x2f; first value wins&#xa;                &#x7d;&#xa;            &#x7d;&#xa;        &#x7d; else &#x7b;&#xa;            return OAuth.getParameterMap&#x28;parameters&#x29;&#x5b;name&#x5d;&#x3b;&#xa;        &#x7d;&#xa;        return null&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    formEncode&#x3a; function formEncode&#x28;parameters&#x29; &#x7b;&#xa;        var form &#x3d; &#x22;&#x22;&#x3b;&#xa;        var list &#x3d; OAuth.getParameterList&#x28;parameters&#x29;&#x3b;&#xa;        for &#x28;var p &#x3d; 0&#x3b; p &#x3c; list.length&#x3b; &#x2b;&#x2b;p&#x29; &#x7b;&#xa;            var value &#x3d; list&#x5b;p&#x5d;&#x5b;1&#x5d;&#x3b;&#xa;            if &#x28;value &#x3d;&#x3d; null&#x29; value &#x3d; &#x22;&#x22;&#x3b;&#xa;            if &#x28;form &#x21;&#x3d; &#x22;&#x22;&#x29; form &#x2b;&#x3d; &#x27;&#x26;&#x27;&#x3b;&#xa;            form &#x2b;&#x3d; OAuth.percentEncode&#x28;list&#x5b;p&#x5d;&#x5b;0&#x5d;&#x29;&#xa;              &#x2b;&#x27;&#x3d;&#x27;&#x2b; OAuth.percentEncode&#x28;value&#x29;&#x3b;&#xa;        &#x7d;&#xa;        return form&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    decodeForm&#x3a; function decodeForm&#x28;form&#x29; &#x7b;&#xa;        var list &#x3d; &#x5b;&#x5d;&#x3b;&#xa;        var nvps &#x3d; form.split&#x28;&#x27;&#x26;&#x27;&#x29;&#x3b;&#xa;        for &#x28;var n &#x3d; 0&#x3b; n &#x3c; nvps.length&#x3b; &#x2b;&#x2b;n&#x29; &#x7b;&#xa;            var nvp &#x3d; nvps&#x5b;n&#x5d;&#x3b;&#xa;            if &#x28;nvp &#x3d;&#x3d; &#x22;&#x22;&#x29; &#x7b;&#xa;                continue&#x3b;&#xa;            &#x7d;&#xa;            var equals &#x3d; nvp.indexOf&#x28;&#x27;&#x3d;&#x27;&#x29;&#x3b;&#xa;            var name&#x3b;&#xa;            var value&#x3b;&#xa;            if &#x28;equals &#x3c; 0&#x29; &#x7b;&#xa;                name &#x3d; OAuth.decodePercent&#x28;nvp&#x29;&#x3b;&#xa;                value &#x3d; null&#x3b;&#xa;            &#x7d; else &#x7b;&#xa;                name &#x3d; OAuth.decodePercent&#x28;nvp.substring&#x28;0, equals&#x29;&#x29;&#x3b;&#xa;                value &#x3d; OAuth.decodePercent&#x28;nvp.substring&#x28;equals &#x2b; 1&#x29;&#x29;&#x3b;&#xa;            &#x7d;&#xa;            list.push&#x28;&#x5b;name, value&#x5d;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        return list&#x3b;&#xa;    &#x7d;&#xa;, &#xa;    setParameter&#x3a; function setParameter&#x28;message, name, value&#x29; &#x7b;&#xa;        var parameters &#x3d; message.parameters&#x3b;&#xa;        if &#x28;parameters instanceof Array&#x29; &#x7b;&#xa;            for &#x28;var p &#x3d; 0&#x3b; p &#x3c; parameters.length&#x3b; &#x2b;&#x2b;p&#x29; &#x7b;&#xa;                if &#x28;parameters&#x5b;p&#x5d;&#x5b;0&#x5d; &#x3d;&#x3d; name&#x29; &#x7b;&#xa;                    if &#x28;value &#x3d;&#x3d;&#x3d; undefined&#x29; &#x7b;&#xa;                        parameters.splice&#x28;p, 1&#x29;&#x3b;&#xa;                    &#x7d; else &#x7b;&#xa;                        parameters&#x5b;p&#x5d;&#x5b;1&#x5d; &#x3d; value&#x3b;&#xa;                        value &#x3d; undefined&#x3b;&#xa;                    &#x7d;&#xa;                &#x7d;&#xa;            &#x7d;&#xa;            if &#x28;value &#x21;&#x3d;&#x3d; undefined&#x29; &#x7b;&#xa;                parameters.push&#x28;&#x5b;name, value&#x5d;&#x29;&#x3b;&#xa;            &#x7d;&#xa;        &#x7d; else &#x7b;&#xa;            parameters &#x3d; OAuth.getParameterMap&#x28;parameters&#x29;&#x3b;&#xa;            parameters&#x5b;name&#x5d; &#x3d; value&#x3b;&#xa;            message.parameters &#x3d; parameters&#x3b;&#xa;        &#x7d;&#xa;    &#x7d;&#xa;,&#xa;    setParameters&#x3a; function setParameters&#x28;message, parameters&#x29; &#x7b;&#xa;        var list &#x3d; OAuth.getParameterList&#x28;parameters&#x29;&#x3b;&#xa;        for &#x28;var i &#x3d; 0&#x3b; i &#x3c; list.length&#x3b; &#x2b;&#x2b;i&#x29; &#x7b;&#xa;            OAuth.setParameter&#x28;message, list&#x5b;i&#x5d;&#x5b;0&#x5d;, list&#x5b;i&#x5d;&#x5b;1&#x5d;&#x29;&#x3b;&#xa;        &#x7d;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Fill in parameters to help construct a request message.&#xa;        This function doesn&#x27;t fill in every parameter.&#xa;        The accessor object should be like&#x3a;&#xa;        &#x7b;consumerKey&#x3a;&#x27;foo&#x27;, consumerSecret&#x3a;&#x27;bar&#x27;, accessorSecret&#x3a;&#x27;nurn&#x27;, token&#x3a;&#x27;krelm&#x27;, tokenSecret&#x3a;&#x27;blah&#x27;&#x7d;&#xa;        The accessorSecret property is optional.&#xa;     &#x2a;&#x2f;&#xa;    completeRequest&#x3a; function completeRequest&#x28;message, accessor&#x29; &#x7b;&#xa;        if &#x28;message.method &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            message.method &#x3d; &#x22;GET&#x22;&#x3b;&#xa;        &#x7d;&#xa;        var map &#x3d; OAuth.getParameterMap&#x28;message.parameters&#x29;&#x3b;&#xa;        if &#x28;map.oauth_consumer_key &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            OAuth.setParameter&#x28;message, &#x22;oauth_consumer_key&#x22;, accessor.consumerKey &#x7c;&#x7c; &#x22;&#x22;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;map.oauth_token &#x3d;&#x3d; null &#x26;&#x26; accessor.token &#x21;&#x3d; null&#x29; &#x7b;&#xa;            OAuth.setParameter&#x28;message, &#x22;oauth_token&#x22;, accessor.token&#x29;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;map.oauth_version &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            OAuth.setParameter&#x28;message, &#x22;oauth_version&#x22;, &#x22;1.0&#x22;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;map.oauth_timestamp &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            OAuth.setParameter&#x28;message, &#x22;oauth_timestamp&#x22;, OAuth.timestamp&#x28;&#x29;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        if &#x28;map.oauth_nonce &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            OAuth.setParameter&#x28;message, &#x22;oauth_nonce&#x22;, OAuth.nonce&#x28;6&#x29;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        OAuth.SignatureMethod.sign&#x28;message, accessor&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    setTimestampAndNonce&#x3a; function setTimestampAndNonce&#x28;message&#x29; &#x7b;&#xa;        OAuth.setParameter&#x28;message, &#x22;oauth_timestamp&#x22;, OAuth.timestamp&#x28;&#x29;&#x29;&#x3b;&#xa;        OAuth.setParameter&#x28;message, &#x22;oauth_nonce&#x22;, OAuth.nonce&#x28;6&#x29;&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    addToURL&#x3a; function addToURL&#x28;url, parameters&#x29; &#x7b;&#xa;        newURL &#x3d; url&#x3b;&#xa;        if &#x28;parameters &#x21;&#x3d; null&#x29; &#x7b;&#xa;            var toAdd &#x3d; OAuth.formEncode&#x28;parameters&#x29;&#x3b;&#xa;            if &#x28;toAdd.length &#x3e; 0&#x29; &#x7b;&#xa;                var q &#x3d; url.indexOf&#x28;&#x27;&#x3f;&#x27;&#x29;&#x3b;&#xa;                if &#x28;q &#x3c; 0&#x29; newURL &#x2b;&#x3d; &#x27;&#x3f;&#x27;&#x3b;&#xa;                else       newURL &#x2b;&#x3d; &#x27;&#x26;&#x27;&#x3b;&#xa;                newURL &#x2b;&#x3d; toAdd&#x3b;&#xa;            &#x7d;&#xa;        &#x7d;&#xa;        return newURL&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Construct the value of the Authorization header for an HTTP request. &#x2a;&#x2f;&#xa;    getAuthorizationHeader&#x3a; function getAuthorizationHeader&#x28;realm, parameters&#x29; &#x7b;&#xa;        var header &#x3d; &#x27;OAuth realm&#x3d;&#x22;&#x27; &#x2b; OAuth.percentEncode&#x28;realm&#x29; &#x2b; &#x27;&#x22;&#x27;&#x3b;&#xa;        var list &#x3d; OAuth.getParameterList&#x28;parameters&#x29;&#x3b;&#xa;        for &#x28;var p &#x3d; 0&#x3b; p &#x3c; list.length&#x3b; &#x2b;&#x2b;p&#x29; &#x7b;&#xa;            var parameter &#x3d; list&#x5b;p&#x5d;&#x3b;&#xa;            var name &#x3d; parameter&#x5b;0&#x5d;&#x3b;&#xa;            if &#x28;name.indexOf&#x28;&#x22;oauth_&#x22;&#x29; &#x3d;&#x3d; 0&#x29; &#x7b;&#xa;                header &#x2b;&#x3d; &#x27;,&#x27; &#x2b; OAuth.percentEncode&#x28;name&#x29; &#x2b; &#x27;&#x3d;&#x22;&#x27; &#x2b; OAuth.percentEncode&#x28;parameter&#x5b;1&#x5d;&#x29; &#x2b; &#x27;&#x22;&#x27;&#x3b;&#xa;            &#x7d;&#xa;        &#x7d;&#xa;        return header&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Correct the time using a parameter from the URL from which the last script was loaded. &#x2a;&#x2f;&#xa;    correctTimestampFromSrc&#x3a; function correctTimestampFromSrc&#x28;parameterName&#x29; &#x7b;&#xa;        parameterName &#x3d; parameterName &#x7c;&#x7c; &#x22;oauth_timestamp&#x22;&#x3b;&#xa;        var scripts &#x3d; document.getElementsByTagName&#x28;&#x27;script&#x27;&#x29;&#x3b;&#xa;        if &#x28;scripts &#x3d;&#x3d; null &#x7c;&#x7c; &#x21;scripts.length&#x29; return&#x3b;&#xa;        var src &#x3d; scripts&#x5b;scripts.length-1&#x5d;.src&#x3b;&#xa;        if &#x28;&#x21;src&#x29; return&#x3b;&#xa;        var q &#x3d; src.indexOf&#x28;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xa;        if &#x28;q &#x3c; 0&#x29; return&#x3b;&#xa;        parameters &#x3d; OAuth.getParameterMap&#x28;OAuth.decodeForm&#x28;src.substring&#x28;q&#x2b;1&#x29;&#x29;&#x29;&#x3b;&#xa;        var t &#x3d; parameters&#x5b;parameterName&#x5d;&#x3b;&#xa;        if &#x28;t &#x3d;&#x3d; null&#x29; return&#x3b;&#xa;        OAuth.correctTimestamp&#x28;t&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Generate timestamps starting with the given value. &#x2a;&#x2f;&#xa;    correctTimestamp&#x3a; function correctTimestamp&#x28;timestamp&#x29; &#x7b;&#xa;        OAuth.timeCorrectionMsec &#x3d; &#x28;timestamp &#x2a; 1000&#x29; - &#x28;new Date&#x28;&#x29;&#x29;.getTime&#x28;&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; The difference between the correct time and my clock. &#x2a;&#x2f;&#xa;    timeCorrectionMsec&#x3a; 0&#xa;,&#xa;    timestamp&#x3a; function timestamp&#x28;&#x29; &#x7b;&#xa;        var t &#x3d; &#x28;new Date&#x28;&#x29;&#x29;.getTime&#x28;&#x29; &#x2b; OAuth.timeCorrectionMsec&#x3b;&#xa;        return Math.floor&#x28;t &#x2f; 1000&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    nonce&#x3a; function nonce&#x28;length&#x29; &#x7b;&#xa;        var chars &#x3d; OAuth.nonce.CHARS&#x3b;&#xa;        var result &#x3d; &#x22;&#x22;&#x3b;&#xa;        for &#x28;var i &#x3d; 0&#x3b; i &#x3c; length&#x3b; &#x2b;&#x2b;i&#x29; &#x7b;&#xa;            var rnum &#x3d; Math.floor&#x28;Math.random&#x28;&#x29; &#x2a; chars.length&#x29;&#x3b;&#xa;            result &#x2b;&#x3d; chars.substring&#x28;rnum, rnum&#x2b;1&#x29;&#x3b;&#xa;        &#x7d;&#xa;        return result&#x3b;&#xa;    &#x7d;&#xa;&#x7d;&#x29;&#x3b;&#xa;&#xa;OAuth.nonce.CHARS &#x3d; &#x22;0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz&#x22;&#x3b;&#xa;&#xa;&#x2f;&#x2a;&#x2a; Define a constructor function,&#xa;    without causing trouble to anyone who was using it as a namespace.&#xa;    That is, if parent&#x5b;name&#x5d; already existed and had properties,&#xa;    copy those properties into the new constructor.&#xa; &#x2a;&#x2f;&#xa;OAuth.declareClass &#x3d; function declareClass&#x28;parent, name, newConstructor&#x29; &#x7b;&#xa;    var previous &#x3d; parent&#x5b;name&#x5d;&#x3b;&#xa;    parent&#x5b;name&#x5d; &#x3d; newConstructor&#x3b;&#xa;    if &#x28;newConstructor &#x21;&#x3d; null &#x26;&#x26; previous &#x21;&#x3d; null&#x29; &#x7b;&#xa;        for &#x28;var key in previous&#x29; &#x7b;&#xa;            if &#x28;key &#x21;&#x3d; &#x22;prototype&#x22;&#x29; &#x7b;&#xa;                newConstructor&#x5b;key&#x5d; &#x3d; previous&#x5b;key&#x5d;&#x3b;&#xa;            &#x7d;&#xa;        &#x7d;&#xa;    &#x7d;&#xa;    return newConstructor&#x3b;&#xa;&#x7d;&#xa;&#xa;&#x2f;&#x2a;&#x2a; An abstract algorithm for signing messages. &#x2a;&#x2f;&#xa;OAuth.declareClass&#x28;OAuth, &#x22;SignatureMethod&#x22;, function OAuthSignatureMethod&#x28;&#x29;&#x7b;&#x7d;&#x29;&#x3b;&#xa;&#xa;OAuth.setProperties&#x28;OAuth.SignatureMethod.prototype, &#x2f;&#x2f; instance members&#xa;&#x7b;&#xa;    &#x2f;&#x2a;&#x2a; Add a signature to the message. &#x2a;&#x2f;&#xa;    sign&#x3a; function sign&#x28;message&#x29; &#x7b;&#xa;        var baseString &#x3d; OAuth.SignatureMethod.getBaseString&#x28;message&#x29;&#x3b;&#xa;        var signature &#x3d; this.getSignature&#x28;baseString&#x29;&#x3b;&#xa;        OAuth.setParameter&#x28;message, &#x22;oauth_signature&#x22;, signature&#x29;&#x3b;&#xa;        return signature&#x3b; &#x2f;&#x2f; just in case someone&#x27;s interested&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Set the key string for signing. &#x2a;&#x2f;&#xa;    initialize&#x3a; function initialize&#x28;name, accessor&#x29; &#x7b;&#xa;        var consumerSecret&#x3b;&#xa;        if &#x28;accessor.accessorSecret &#x21;&#x3d; null&#xa;            &#x26;&#x26; name.length &#x3e; 9&#xa;            &#x26;&#x26; name.substring&#x28;name.length-9&#x29; &#x3d;&#x3d; &#x22;-Accessor&#x22;&#x29;&#xa;        &#x7b;&#xa;            consumerSecret &#x3d; accessor.accessorSecret&#x3b;&#xa;        &#x7d; else &#x7b;&#xa;            consumerSecret &#x3d; accessor.consumerSecret&#x3b;&#xa;        &#x7d;&#xa;        this.key &#x3d; OAuth.percentEncode&#x28;consumerSecret&#x29;&#xa;             &#x2b;&#x22;&#x26;&#x22;&#x2b; OAuth.percentEncode&#x28;accessor.tokenSecret&#x29;&#x3b;&#xa;    &#x7d;&#xa;&#x7d;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2a; SignatureMethod expects an accessor object to be like this&#x3a;&#xa;   &#x7b;tokenSecret&#x3a; &#x22;lakjsdflkj...&#x22;, consumerSecret&#x3a; &#x22;QOUEWRI..&#x22;, accessorSecret&#x3a; &#x22;xcmvzc...&#x22;&#x7d;&#xa;   The accessorSecret property is optional.&#xa; &#x2a;&#x2f;&#xa;&#x2f;&#x2f; Class members&#x3a;&#xa;OAuth.setProperties&#x28;OAuth.SignatureMethod, &#x2f;&#x2f; class members&#xa;&#x7b;&#xa;    sign&#x3a; function sign&#x28;message, accessor&#x29; &#x7b;&#xa;        var name &#x3d; OAuth.getParameterMap&#x28;message.parameters&#x29;.oauth_signature_method&#x3b;&#xa;        if &#x28;name &#x3d;&#x3d; null &#x7c;&#x7c; name &#x3d;&#x3d; &#x22;&#x22;&#x29; &#x7b;&#xa;            name &#x3d; &#x22;HMAC-SHA1&#x22;&#x3b;&#xa;            OAuth.setParameter&#x28;message, &#x22;oauth_signature_method&#x22;, name&#x29;&#x3b;&#xa;        &#x7d;&#xa;        OAuth.SignatureMethod.newMethod&#x28;name, accessor&#x29;.sign&#x28;message&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Instantiate a SignatureMethod for the given method name. &#x2a;&#x2f;&#xa;    newMethod&#x3a; function newMethod&#x28;name, accessor&#x29; &#x7b;&#xa;        var impl &#x3d; OAuth.SignatureMethod.REGISTERED&#x5b;name&#x5d;&#x3b;&#xa;        if &#x28;impl &#x21;&#x3d; null&#x29; &#x7b;&#xa;            var method &#x3d; new impl&#x28;&#x29;&#x3b;&#xa;            method.initialize&#x28;name, accessor&#x29;&#x3b;&#xa;            return method&#x3b;&#xa;        &#x7d;&#xa;        var err &#x3d; new Error&#x28;&#x22;signature_method_rejected&#x22;&#x29;&#x3b;&#xa;        var acceptable &#x3d; &#x22;&#x22;&#x3b;&#xa;        for &#x28;var r in OAuth.SignatureMethod.REGISTERED&#x29; &#x7b;&#xa;            if &#x28;acceptable &#x21;&#x3d; &#x22;&#x22;&#x29; acceptable &#x2b;&#x3d; &#x27;&#x26;&#x27;&#x3b;&#xa;            acceptable &#x2b;&#x3d; OAuth.percentEncode&#x28;r&#x29;&#x3b;&#xa;        &#x7d;&#xa;        err.oauth_acceptable_signature_methods &#x3d; acceptable&#x3b;&#xa;        throw err&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; A map from signature method name to constructor. &#x2a;&#x2f;&#xa;    REGISTERED &#x3a; &#x7b;&#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Subsequently, the given constructor will be used for the named methods.&#xa;        The constructor will be called with no parameters.&#xa;        The resulting object should usually implement getSignature&#x28;baseString&#x29;.&#xa;        You can easily define such a constructor by calling makeSubclass, below.&#xa;     &#x2a;&#x2f;&#xa;    registerMethodClass&#x3a; function registerMethodClass&#x28;names, classConstructor&#x29; &#x7b;&#xa;        for &#x28;var n &#x3d; 0&#x3b; n &#x3c; names.length&#x3b; &#x2b;&#x2b;n&#x29; &#x7b;&#xa;            OAuth.SignatureMethod.REGISTERED&#x5b;names&#x5b;n&#x5d;&#x5d; &#x3d; classConstructor&#x3b;&#xa;        &#x7d;&#xa;    &#x7d;&#xa;,&#xa;    &#x2f;&#x2a;&#x2a; Create a subclass of OAuth.SignatureMethod, with the given getSignature function. &#x2a;&#x2f;&#xa;    makeSubclass&#x3a; function makeSubclass&#x28;getSignatureFunction&#x29; &#x7b;&#xa;        var superClass &#x3d; OAuth.SignatureMethod&#x3b;&#xa;        var subClass &#x3d; function&#x28;&#x29; &#x7b;&#xa;            superClass.call&#x28;this&#x29;&#x3b;&#xa;        &#x7d;&#x3b;&#xa;        subClass.prototype &#x3d; new superClass&#x28;&#x29;&#x3b;&#xa;        &#x2f;&#x2f; Delete instance variables from prototype&#x3a;&#xa;        &#x2f;&#x2f; delete subclass.prototype... There aren&#x27;t any.&#xa;        subClass.prototype.getSignature &#x3d; getSignatureFunction&#x3b;&#xa;        subClass.prototype.constructor &#x3d; subClass&#x3b;&#xa;        return subClass&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    getBaseString&#x3a; function getBaseString&#x28;message&#x29; &#x7b;&#xa;        var URL &#x3d; message.action&#x3b;&#xa;        var q &#x3d; URL.indexOf&#x28;&#x27;&#x3f;&#x27;&#x29;&#x3b;&#xa;        var parameters&#x3b;&#xa;        if &#x28;q &#x3c; 0&#x29; &#x7b;&#xa;            parameters &#x3d; message.parameters&#x3b;&#xa;        &#x7d; else &#x7b;&#xa;            &#x2f;&#x2f; Combine the URL query string with the other parameters&#x3a;&#xa;            parameters &#x3d; OAuth.decodeForm&#x28;URL.substring&#x28;q &#x2b; 1&#x29;&#x29;&#x3b;&#xa;            var toAdd &#x3d; OAuth.getParameterList&#x28;message.parameters&#x29;&#x3b;&#xa;            for &#x28;var a &#x3d; 0&#x3b; a &#x3c; toAdd.length&#x3b; &#x2b;&#x2b;a&#x29; &#x7b;&#xa;                parameters.push&#x28;toAdd&#x5b;a&#x5d;&#x29;&#x3b;&#xa;            &#x7d;&#xa;        &#x7d;&#xa;        return OAuth.percentEncode&#x28;message.method.toUpperCase&#x28;&#x29;&#x29;&#xa;         &#x2b;&#x27;&#x26;&#x27;&#x2b; OAuth.percentEncode&#x28;OAuth.SignatureMethod.normalizeUrl&#x28;URL&#x29;&#x29;&#xa;         &#x2b;&#x27;&#x26;&#x27;&#x2b; OAuth.percentEncode&#x28;OAuth.SignatureMethod.normalizeParameters&#x28;parameters&#x29;&#x29;&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    normalizeUrl&#x3a; function normalizeUrl&#x28;url&#x29; &#x7b;&#xa;        var uri &#x3d; OAuth.SignatureMethod.parseUri&#x28;url&#x29;&#x3b;&#xa;        var scheme &#x3d; uri.protocol.toLowerCase&#x28;&#x29;&#x3b;&#xa;        var authority &#x3d; uri.authority.toLowerCase&#x28;&#x29;&#x3b;&#xa;        var dropPort &#x3d; &#x28;scheme &#x3d;&#x3d; &#x22;http&#x22; &#x26;&#x26; uri.port &#x3d;&#x3d; 80&#x29;&#xa;                    &#x7c;&#x7c; &#x28;scheme &#x3d;&#x3d; &#x22;https&#x22; &#x26;&#x26; uri.port &#x3d;&#x3d; 443&#x29;&#x3b;&#xa;        if &#x28;dropPort&#x29; &#x7b;&#xa;            &#x2f;&#x2f; find the last &#x3a; in the authority&#xa;            var index &#x3d; authority.lastIndexOf&#x28;&#x22;&#x3a;&#x22;&#x29;&#x3b;&#xa;            if &#x28;index &#x3e;&#x3d; 0&#x29; &#x7b;&#xa;                authority &#x3d; authority.substring&#x28;0, index&#x29;&#x3b;&#xa;            &#x7d;&#xa;        &#x7d;&#xa;        var path &#x3d; uri.path&#x3b;&#xa;        if &#x28;&#x21;path&#x29; &#x7b;&#xa;            path &#x3d; &#x22;&#x2f;&#x22;&#x3b; &#x2f;&#x2f; conforms to RFC 2616 section 3.2.2&#xa;        &#x7d;&#xa;        &#x2f;&#x2f; we know that there is no query and no fragment here.&#xa;        return scheme &#x2b; &#x22;&#x3a;&#x2f;&#x2f;&#x22; &#x2b; authority &#x2b; path&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    parseUri&#x3a; function parseUri &#x28;str&#x29; &#x7b;&#xa;        &#x2f;&#x2a; This function was adapted from parseUri 1.2.1&#xa;           http&#x3a;&#x2f;&#x2f;stevenlevithan.com&#x2f;demo&#x2f;parseuri&#x2f;js&#x2f;assets&#x2f;parseuri.js&#xa;         &#x2a;&#x2f;&#xa;        var o &#x3d; &#x7b;key&#x3a; &#x5b;&#x22;source&#x22;,&#x22;protocol&#x22;,&#x22;authority&#x22;,&#x22;userInfo&#x22;,&#x22;user&#x22;,&#x22;password&#x22;,&#x22;host&#x22;,&#x22;port&#x22;,&#x22;relative&#x22;,&#x22;path&#x22;,&#x22;directory&#x22;,&#x22;file&#x22;,&#x22;query&#x22;,&#x22;anchor&#x22;&#x5d;,&#xa;                 parser&#x3a; &#x7b;strict&#x3a; &#x2f;&#x5e;&#x28;&#x3f;&#x3a;&#x28;&#x5b;&#x5e;&#x3a;&#x5c;&#x2f;&#x3f;&#x23;&#x5d;&#x2b;&#x29;&#x3a;&#x29;&#x3f;&#x28;&#x3f;&#x3a;&#x5c;&#x2f;&#x5c;&#x2f;&#x28;&#x28;&#x3f;&#x3a;&#x28;&#x28;&#x5b;&#x5e;&#x3a;&#x40;&#x5c;&#x2f;&#x5d;&#x2a;&#x29;&#x3a;&#x3f;&#x28;&#x5b;&#x5e;&#x3a;&#x40;&#x5c;&#x2f;&#x5d;&#x2a;&#x29;&#x29;&#x3f;&#x40;&#x29;&#x3f;&#x28;&#x5b;&#x5e;&#x3a;&#x5c;&#x2f;&#x3f;&#x23;&#x5d;&#x2a;&#x29;&#x28;&#x3f;&#x3a;&#x3a;&#x28;&#x5c;d&#x2a;&#x29;&#x29;&#x3f;&#x29;&#x29;&#x3f;&#x28;&#x28;&#x28;&#x28;&#x3f;&#x3a;&#x5b;&#x5e;&#x3f;&#x23;&#x5c;&#x2f;&#x5d;&#x2a;&#x5c;&#x2f;&#x29;&#x2a;&#x29;&#x28;&#x5b;&#x5e;&#x3f;&#x23;&#x5d;&#x2a;&#x29;&#x29;&#x28;&#x3f;&#x3a;&#x5c;&#x3f;&#x28;&#x5b;&#x5e;&#x23;&#x5d;&#x2a;&#x29;&#x29;&#x3f;&#x28;&#x3f;&#x3a;&#x23;&#x28;.&#x2a;&#x29;&#x29;&#x3f;&#x29;&#x2f; &#x7d;&#x7d;&#x3b;&#xa;        var m &#x3d; o.parser.strict.exec&#x28;str&#x29;&#x3b;&#xa;        var uri &#x3d; &#x7b;&#x7d;&#x3b;&#xa;        var i &#x3d; 14&#x3b;&#xa;        while &#x28;i--&#x29; uri&#x5b;o.key&#x5b;i&#x5d;&#x5d; &#x3d; m&#x5b;i&#x5d; &#x7c;&#x7c; &#x22;&#x22;&#x3b;&#xa;        return uri&#x3b;&#xa;    &#x7d;&#xa;,&#xa;    normalizeParameters&#x3a; function normalizeParameters&#x28;parameters&#x29; &#x7b;&#xa;        if &#x28;parameters &#x3d;&#x3d; null&#x29; &#x7b;&#xa;            return &#x22;&#x22;&#x3b;&#xa;        &#x7d;&#xa;        var list &#x3d; OAuth.getParameterList&#x28;parameters&#x29;&#x3b;&#xa;        var sortable &#x3d; &#x5b;&#x5d;&#x3b;&#xa;        for &#x28;var p &#x3d; 0&#x3b; p &#x3c; list.length&#x3b; &#x2b;&#x2b;p&#x29; &#x7b;&#xa;            var nvp &#x3d; list&#x5b;p&#x5d;&#x3b;&#xa;            if &#x28;nvp&#x5b;0&#x5d; &#x21;&#x3d; &#x22;oauth_signature&#x22;&#x29; &#x7b;&#xa;                sortable.push&#x28;&#x5b; OAuth.percentEncode&#x28;nvp&#x5b;0&#x5d;&#x29;&#xa;                              &#x2b; &#x22; &#x22; &#x2f;&#x2f; because it comes before any character that can appear in a percentEncoded string.&#xa;                              &#x2b; OAuth.percentEncode&#x28;nvp&#x5b;1&#x5d;&#x29;&#xa;                              , nvp&#x5d;&#x29;&#x3b;&#xa;            &#x7d;&#xa;        &#x7d;&#xa;        sortable.sort&#x28;function&#x28;a,b&#x29; &#x7b;&#xa;                          if &#x28;a&#x5b;0&#x5d; &#x3c; b&#x5b;0&#x5d;&#x29; return  -1&#x3b;&#xa;                          if &#x28;a&#x5b;0&#x5d; &#x3e; b&#x5b;0&#x5d;&#x29; return 1&#x3b;&#xa;                          return 0&#x3b;&#xa;                      &#x7d;&#x29;&#x3b;&#xa;        var sorted &#x3d; &#x5b;&#x5d;&#x3b;&#xa;        for &#x28;var s &#x3d; 0&#x3b; s &#x3c; sortable.length&#x3b; &#x2b;&#x2b;s&#x29; &#x7b;&#xa;            sorted.push&#x28;sortable&#x5b;s&#x5d;&#x5b;1&#x5d;&#x29;&#x3b;&#xa;        &#x7d;&#xa;        return OAuth.formEncode&#x28;sorted&#x29;&#x3b;&#xa;    &#x7d;&#xa;&#x7d;&#x29;&#x3b;&#xa;&#xa;OAuth.SignatureMethod.registerMethodClass&#x28;&#x5b;&#x22;PLAINTEXT&#x22;, &#x22;PLAINTEXT-Accessor&#x22;&#x5d;,&#xa;    OAuth.SignatureMethod.makeSubclass&#x28;&#xa;        function getSignature&#x28;baseString&#x29; &#x7b;&#xa;            return this.key&#x3b;&#xa;        &#x7d;&#xa;    &#x29;&#x29;&#x3b;&#xa;&#xa;OAuth.SignatureMethod.registerMethodClass&#x28;&#x5b;&#x22;HMAC-SHA1&#x22;, &#x22;HMAC-SHA1-Accessor&#x22;&#x5d;,&#xa;    OAuth.SignatureMethod.makeSubclass&#x28;&#xa;        function getSignature&#x28;baseString&#x29; &#x7b;&#xa;            b64pad &#x3d; &#x27;&#x3d;&#x27;&#x3b;&#xa;            var signature &#x3d; b64_hmac_sha1&#x28;this.key, baseString&#x29;&#x3b;&#xa;            return signature&#x3b;&#xa;        &#x7d;&#xa;    &#x29;&#x29;&#x3b;&#xa;&#xa;try &#x7b;&#xa;    OAuth.correctTimestampFromSrc&#x28;&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#xa;&#x7d;&#xa;&#xa;&#xd;&#xa;&#x2f;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xd;&#xa;&#x2a;&#xd;&#xa;&#x2a; Build the header&#xd;&#xa;&#x2a;&#xd;&#xa;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2f;&#xa;&#xd;&#xa;var URL_PARAM &#x3d; &#x27;q&#x3d;&#x27; &#x2b; encodeURIComponent&#x28;&#x27;pentaho&#x27;&#x29; &#x2b; &#x27;&#x26;count&#x3d;2&#x26;result_type&#x3d;mixed&#x27;&#x3b;&#xd;&#xa;&#xa;var accessor &#x3d; &#x7b; consumerSecret&#x3a; oauth_consumer_secret&#xa;                   , tokenSecret   &#x3a; oauth_token_secret&#x7d;&#x3b;&#xa;&#xa;var message &#x3d; &#x7b; method&#x3a; HTTP_METHOD&#xa;                  , action&#x3a; URL&#xa;                  , parameters&#x3a; OAuth.decodeForm&#x28;URL_PARAM&#x29;&#xa;                  &#x7d;&#x3b;&#xa;var oauth_timestamp &#x3d; Math.round&#x28;new Date&#x28;&#x29;.getTime&#x28;&#x29;&#x2f;1000.0&#x29;&#x3b;&#xa;var oauth_nonce &#x3d; OAuth.nonce&#x28;11&#x29;&#x3b;&#xa;&#xa; message.parameters.push&#x28;&#x5b;&#x27;oauth_consumer_key&#x27;, oauth_consumer_key&#x5d;&#x29;&#x3b;&#xa; message.parameters.push&#x28;&#x5b;&#x27;oauth_nonce&#x27;, oauth_nonce&#x5d;&#x29;&#x3b;&#xa; message.parameters.push&#x28;&#x5b;&#x27;oauth_signature_method&#x27;, oauth_signature_method&#x5d;&#x29;&#x3b;&#xa; message.parameters.push&#x28;&#x5b;&#x27;oauth_timestamp&#x27;, oauth_timestamp&#x5d;&#x29;&#x3b;&#xa; message.parameters.push&#x28;&#x5b;&#x27;oauth_token&#x27;, oauth_token&#x5d;&#x29;&#x3b;&#xa; message.parameters.push&#x28;&#x5b;&#x27;oauth_version&#x27;, oauth_version&#x5d;&#x29;&#x3b;&#xa;&#xa;OAuth.SignatureMethod.sign&#x28;message, accessor&#x29;&#x3b;&#xa;&#xa;var REST_HEADER &#x3d; OAuth.getAuthorizationHeader&#x28;&#x22;&#x22;, message.parameters&#x29;&#x3b;&#xa;var REST_URL &#x3d; URL&#x2b;&#x27;&#x3f;&#x27;&#x2b;URL_PARAM&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>REST_HEADER</name>
+        <rename>REST_HEADER</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>REST_URL</name>
+        <rename>REST_URL</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>265</xloc>
+      <yloc>330</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>REST Client</name>
+    <type>Rest</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <applicationType>TEXT PLAIN</applicationType>
+    <method>GET</method>
+    <url/>
+    <urlInField>Y</urlInField>
+    <dynamicMethod>Y</dynamicMethod>
+    <methodFieldName>HTTP_METHOD</methodFieldName>
+    <urlField>REST_URL</urlField>
+    <bodyField/>
+    <httpLogin/>
+    <httpPassword>Encrypted </httpPassword>
+    <proxyHost/>
+    <proxyPort/>
+    <preemptive>N</preemptive>
+    <trustStoreFile/>
+    <trustStorePassword>Encrypted </trustStorePassword>
+    <headers>
+      <header>
+        <field>REST_HEADER</field>
+        <name>Authorization</name>
+        </header>
+      </headers>
+    <parameters>
+      </parameters>
+    <result>
+      <name>result</name>
+      <code/>
+      <response_time/>
+      </result>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>465</xloc>
+      <yloc>330</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output - Twits</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Twit</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>id_str</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>text</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>retweet_count</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>user_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>geo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>follower_count</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>657</xloc>
+      <yloc>437</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output - hashtags</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Hashtags</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>hashtag</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>id_str</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>844</xloc>
+      <yloc>438</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output - raw json</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Json_debug</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>result</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>462</xloc>
+      <yloc>441</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+      <error>
+        <source_step>Json - Hashtags</source_step>
+        <target_step/>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename/>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors/>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
